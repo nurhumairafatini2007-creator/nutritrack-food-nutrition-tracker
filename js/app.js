@@ -158,7 +158,16 @@
       const records = diary.getRecordsForDate(selectedDate);
       const totals = NutritionCalculator.calculateTotals(records);
       document.getElementById('diary-total').textContent =
-        `Total for ${formatDate(selectedDate)}: ${Math.round(totals.calories)} kcal · ${records.length} food record(s)`;
+        `Daily summary for ${formatDate(selectedDate)} · ${records.length} food record(s)`;
+
+      // Recalculate and display nutrients for the currently selected date only.
+      document.getElementById('diary-nutrition-summary').innerHTML = `
+        ${nutrientCard('Calories', totals.calories, 'kcal')}
+        ${nutrientCard('Protein', totals.protein, 'g')}
+        ${nutrientCard('Carbohydrates', totals.carbs, 'g')}
+        ${nutrientCard('Fat', totals.fat, 'g')}
+      `;
+
       const list = document.getElementById('diary-list');
 
       if (!records.length) {

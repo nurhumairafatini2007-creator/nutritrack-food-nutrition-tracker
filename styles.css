@@ -1028,3 +1028,19 @@ footer {
 
   .section-title-row { align-items: flex-start; }
 }
+
+/* Daily nutrition summary for the selected Food Diary date */
+.diary-daily-summary {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0 0 18px;
+}
+
+.diary-daily-summary .nutrient-card {
+  min-width: 0;
+}
+
+@media (max-width: 720px) {
+  .diary-daily-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
