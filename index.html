@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:; connect-src https://api.nal.usda.gov;">
+  <title>NutriTrack | Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="index.html">
+        <div class="brand-icon">N</div>
+        <div><h1>NutriTrack</h1><p>Food Nutrition & Calorie Tracker</p></div>
+      </a>
+      <p class="nav-label">WORKSPACE</p>
+      <a class="nav-button active" href="index.html"><span>⌂</span> Dashboard</a>
+      <a class="nav-button" href="food.html"><span>⌕</span> Food Search</a>
+      <a class="nav-button" href="diary.html"><span>▤</span> Food Diary</a>
+      <div class="sidebar-note">
+        <span class="note-leaf">✿</span>
+        <strong>Small steps matter.</strong>
+        <p>Build healthy habits, one meal at a time.</p>
+      </div>
+      <div class="sidebar-footer">NUTRITRACK · WELLNESS</div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div><p class="eyebrow">YOUR DAILY WELLNESS</p><h2>Dashboard</h2></div>
+        <div class="date-pill"><span>▦</span><span id="today-label"></span></div>
+      </header>
+
+      <section class="hero-banner">
+        <div class="hero-copy">
+          <span class="hero-kicker">A LITTLE BETTER EVERY DAY</span>
+          <h3>Eat well,<br>feel well.</h3>
+          <p>Track your meals, understand your nutrition, and build healthier habits with NutriTrack.</p>
+          <a class="hero-link" href="food.html">Explore food nutrition <span>→</span></a>
+        </div>
+        <img src="assets/images/plum-berry-bowl.jpg" alt="A healthy bowl of yogurt, oats and fresh berries">
+      </section>
+
+      <div class="section-title-row"><div><p class="eyebrow">AT A GLANCE</p><h3>Today's nutrition summary</h3></div><a class="text-button" href="diary.html">View food diary →</a></div>
+
+      <div class="summary-grid">
+        <article class="summary-card calorie-card"><div class="card-heading"><span>Calories consumed</span><span class="metric-icon icon-calorie">✦</span></div><div class="big-number"><span id="dash-calories">0</span><small>kcal</small></div><p>Daily goal: <span id="dash-goal-label">2,000</span> kcal</p><div class="progress-track"><div class="progress-fill" id="calorie-progress"></div></div><p class="remaining-text" id="calorie-remaining">2,000 kcal remaining</p></article>
+        <article class="summary-card"><div class="card-heading"><span>Protein</span><span class="metric-icon icon-protein">↗</span></div><div class="big-number"><span id="dash-protein">0</span><small>g</small></div><p>Today's total intake</p></article>
+        <article class="summary-card"><div class="card-heading"><span>Carbohydrates</span><span class="metric-icon icon-carbs">❋</span></div><div class="big-number"><span id="dash-carbs">0</span><small>g</small></div><p>Today's total intake</p></article>
+        <article class="summary-card"><div class="card-heading"><span>Fat</span><span class="metric-icon icon-fat">◒</span></div><div class="big-number"><span id="dash-fat">0</span><small>g</small></div><p>Today's total intake</p></article>
+      </div>
+
+      <div class="dashboard-bottom">
+        <section class="content-card recent-card">
+          <div class="section-heading"><div><p class="eyebrow">YOUR MEALS</p><h3>Today's food</h3><p>Your latest recorded food intake.</p></div><a class="text-button" href="diary.html">See all →</a></div>
+          <div id="dashboard-food-list" class="empty-state">No food added yet. Search for a food to get started.</div>
+        </section>
+        <section class="goal-card goal-panel">
+          <div class="goal-art"><span>✿</span><span>♡</span></div>
+          <div><p class="eyebrow">MAKE IT YOURS</p><h3>Daily calorie goal</h3><p>Set a target to track your daily calorie intake.</p></div>
+          <div class="goal-input"><input type="number" id="calorie-goal" min="1" max="10000" value="2000" aria-label="Daily calorie goal"><button class="primary-button" id="save-goal" type="button">Save goal</button></div>
+        </section>
+      </div>
+      <footer>NutriTrack · Food Nutrition & Calorie Tracker</footer>
+    </main>
+  </div>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

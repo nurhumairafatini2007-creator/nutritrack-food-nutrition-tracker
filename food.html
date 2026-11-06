@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:; connect-src https://api.nal.usda.gov;">
+  <title>NutriTrack | Food Search</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="index.html"><div class="brand-icon">N</div><div><h1>NutriTrack</h1><p>Food Nutrition & Calorie Tracker</p></div></a>
+      <p class="nav-label">WORKSPACE</p>
+      <a class="nav-button" href="index.html"><span>⌂</span> Dashboard</a>
+      <a class="nav-button active" href="food.html"><span>⌕</span> Food Search</a>
+      <a class="nav-button" href="diary.html"><span>▤</span> Food Diary</a>
+      <div class="sidebar-note"><span class="note-leaf">✿</span><strong>Know what you eat.</strong><p>Explore nutrition facts and make informed food choices.</p></div>
+      <div class="sidebar-footer">NUTRITRACK · WELLNESS</div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar"><div><p class="eyebrow">DISCOVER YOUR FOOD</p><h2>Food Search</h2></div><div class="date-pill"><span>▦</span><span id="today-label"></span></div></header>
+
+      <section class="page-hero search-hero">
+        <div><span class="hero-kicker">FOOD KNOWLEDGE</span><h3>Every bite<br>has a story.</h3><p>Search a food to explore its calories and nutritional values.</p></div>
+        <img src="assets/images/plum-berry-bowl.jpg" alt="Fresh berries and a nutritious breakfast bowl">
+      </section>
+
+      <section class="search-panel content-card">
+        <div class="section-heading"><div><p class="eyebrow">USDA FOOD DATA CENTRAL</p><h3>Find food nutrition</h3><p>Search generic foods and view nutrition values per 100g.</p></div><span class="database-mark">USDA</span></div>
+        <form class="search-form" id="search-form"><input type="text" id="food-search" placeholder="Try apple, banana, white rice or chicken breast" autocomplete="off"><button class="primary-button" type="submit" id="search-button">Search food <span>→</span></button></form>
+        <p class="helper-text">Select a food result to view its nutrition facts and calculate your portion.</p>
+        <div id="search-message" class="message" role="status" aria-live="polite"></div>
+        <div id="search-results" class="food-results"></div>
+        <div id="selected-food" class="content-card selected-food hidden"></div>
+      </section>
+      <footer>NutriTrack · Food Nutrition & Calorie Tracker</footer>
+    </main>
+  </div>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
